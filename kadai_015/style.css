@@ -30,7 +30,7 @@ body {
     border-bottom: solid 3px rgb(115, 115, 114)
 }
 
-#basic { 
+#basic > p { 
   /* 子孫要素を用いた太字指定 */
   font-weight: bold;
 }
