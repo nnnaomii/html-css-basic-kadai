@@ -1,0 +1,112 @@
+/* h1,p,bodyのmarginを0へ */
+h1,p,body {
+    margin: 0;
+}
+
+/* p要素、a要素のフォントサイズを20pxへ */
+p,a{
+    font-size: 20px;
+}
+
+/* headerの指定 */
+header{
+    /* 下に余白20px */
+    padding: 0px 0px 20px 0px;
+    /* 背景色指定 */
+    background-color: rgb(244, 79, 79);
+     /* 中の要素を中央揃え */
+	text-align: center;
+}
+
+/* h1の文字色指定 */
+h1{
+    color: rgb(255, 255, 255);
+}
+
+main{
+    /* mainの余白を上下左右10pxへ */
+    padding: 10px;
+}
+
+#parent {
+    /* displayプロパティを使いid名parentの要素をFlexコンテナにする */
+    display: flex;
+    /* justify-contentプロパティでFlexboxコンテナの子要素（Flexアイテム）「一番左と一番右のアイテムも含め、均等な間隔で配置する」 */
+    justify-content: space-between;   
+}
+
+.contents {
+    /* 線で要素を囲う */
+	border: 3px solid rgb(238, 204, 204);
+    /* widthではなくflex-basisを使って幅は親要素の25%へ */
+	flex-basis: 25%;
+    /* 要素内の余白 */
+	padding: 10px 15px;
+    /* 要素外の余白 */
+	margin: 20px 0;
+    /* 中の要素を中央揃え */
+	text-align: center;
+}
+
+h2{
+    /* h2要素のフォントサイズ */
+    font-size: 25px;
+    /* h2要素の下線 */
+    border-bottom: 3px dotted rgb(236, 122, 122);
+}
+
+/* h2要素の前に「●」記号を表示 */
+h2::before {
+    /*表示するもの*/
+    content: "● ";
+    /*表示物の色指定*/
+    color: rgb(239, 111, 139);
+  }
+
+/* 二番目のp要素内のテキストの中で一番目の文字にのみへのスタイル設定 */
+  .contents p:nth-of-type(2)::first-letter {
+    font-weight: bold;
+    color: rgb(97, 206, 249);
+  }
+
+/* class名contents内のimg要素スタイル */
+.contents img {
+    margin: 10px 0;
+    width: 70%;
+  }
+
+footer{
+    /*背景色*/
+    background-color: rgb(244, 79, 79);
+     /* 中の要素を中央揃え */
+	text-align: center;
+}
+
+/*fottor内リンクの文字色*/  
+footer a {
+    color: rgb(255, 255, 255);
+  }
+/*訪問済みリンクの文字色を変化*/
+footer a:visited {
+    color: rgb(193, 234, 251);
+  }
+/*マウスオーバー時の文字色を変化*/  
+footer a:hover {
+    color: rgb(245, 178, 168);
+  }
+
+/* 画面幅768px以下になったら表示が変わるようにブレークポイントを設定 */
+  @media screen and (max-width: 768px) {  
+    h2 {
+      font-size: 30px;
+    }
+  
+    p {
+      font-size: 25px;
+    }
+  
+    #parent {
+      display: flex;
+      flex-direction: column;
+    }
+  }
